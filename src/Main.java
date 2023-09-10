@@ -39,17 +39,8 @@ public class Main {
                 System.out.println("Already guessed " + guessedLetter +"!");
             }
 
-        // Check the user guess and update the correct words and wrong words accordingly-----------------
-            boolean found = false;
-            for (int i = 0; i < secretWord.length(); i++) {
-                if (secretWord.charAt(i) == letter) {
-                    correctLetters[i]= letter;
-                    found = true;
-                }
-            }
-
         // Control the wrong attempts-----------------------------------------------------------------
-            if (found) {
+            if (isGuessCorrect(secretWord, letter, correctLetters)) {
                 System.out.println("Correct guess!");
             } else {
                 wrongLetters[7 - attemptsLeft] = letter;
@@ -69,7 +60,16 @@ public class Main {
             System.out.println("You ran out of attempts. The secret word was: " + secretWord);
         }
     }
-
+        public static boolean isGuessCorrect(String secretWord, char letter, char[] correctLetters){
+            boolean found = false;
+            for (int i = 0; i < secretWord.length(); i++) {
+                if (secretWord.charAt(i) == letter) {
+                    correctLetters[i]= letter;
+                    found = true;
+                }
+            }
+            return found;
+        }
         public static void displayStatus(char[] wrongLetters, char[] correctLetters, int attemptsLeft){
             System.out.println("Guess the secret word: " + new String(correctLetters));
             System.out.println("Attempts left - " + attemptsLeft);
