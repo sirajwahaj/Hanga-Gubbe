@@ -5,17 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String[] words = new String[]{"Sunshine", "Elephant", "Butterfly", "Adventure",
-                "Delicious", "Mountains", "Watermelon", "Sunshine", "Chocolate",
-                "Happiness", "Strawberry", "Universe", "Symphony", "Serendipity",
-                "Friendship", "Beautiful", "Sunshine", "Tranquility", "Butterfly",
-                "Whispering", "Brilliant", "Sparkling", "Elegance", "Captivating",
-                "Exploration"};
-        // To Choose and feed up the secret word with dashes---------------------------------------------
-        Random random = new Random();
-        int randomIndex = random.nextInt(words.length);
-        // int randomIndex = (int) (Math.random()* words.length);
-        String secretWord = words[randomIndex].toUpperCase();
+
+        // To choose the secret word--------------------------------------------------------------------
+        String secretWord = obtainSecretWord();
         char[] correctLetters = new char[secretWord.length()];
         for (int i = 0; i < secretWord.length(); i++) {
             correctLetters[i] = '_';
@@ -95,4 +87,16 @@ public class Main {
             return strWrongLetters.contains(strLetter) || strCorrectLetters.contains(strLetter);
         }
 
+        public static String obtainSecretWord(){
+            String[] words = new String[]{"Sunshine", "Elephant", "Butterfly", "Adventure",
+                    "Delicious", "Mountains", "Watermelon", "Sunshine", "Chocolate",
+                    "Happiness", "Strawberry", "Universe", "Symphony", "Serendipity",
+                    "Friendship", "Beautiful", "Sunshine", "Tranquility", "Butterfly",
+                    "Whispering", "Brilliant", "Sparkling", "Elegance", "Captivating",
+                    "Exploration"};
+
+            Random random = new Random();
+            int randomIndex = random.nextInt(words.length);
+            return words[randomIndex].toUpperCase();
+        }
 }
