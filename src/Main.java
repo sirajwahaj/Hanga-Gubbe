@@ -25,7 +25,7 @@ public class Main {
             displayStatus(wrongLetters, correctLetters, attemptsLeft);
 
         // Get the user guess -----------------------------------------------------------------------
-            System.out.print("Guess:");
+            System.out.print("\nGuess: ");
             String guessedLetter = scanner.next().toUpperCase();
             char letter = guessedLetter.charAt(0);
 
@@ -88,12 +88,11 @@ public class Main {
         }
 
         public static String obtainSecretWord(){
-            String[] words = new String[]{"Sunshine", "Elephant", "Butterfly", "Adventure",
-                    "Delicious", "Mountains", "Watermelon", "Sunshine", "Chocolate",
-                    "Happiness", "Strawberry", "Universe", "Symphony", "Serendipity",
-                    "Friendship", "Beautiful", "Sunshine", "Tranquility", "Butterfly",
-                    "Whispering", "Brilliant", "Sparkling", "Elegance", "Captivating",
-                    "Exploration"};
+            String[] words = new String[]{"Algorithm", "Exception", "Variable", "Function",
+                    "Statement", "Operator", "Compiler", "Debugging", "Interface", "Argument",
+                    "Parameter", "Framework", "Prototype", "Abstraction", "Encapsulation",
+                    "Inheritance", "Polymorphism", "Multithreading", "Recursion", "Condition",
+                    "Validation", "Efficiency", "Concatenate", "Dependency", "Optimization" };
 
             Random random = new Random();
             int randomIndex = random.nextInt(words.length);
